@@ -18,9 +18,10 @@
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
       </div>
       <div class="grid grid-cols-4 gap-4">
-        <button class="py-4 px-1 rounded-md text-xl shadow-md text-center bg-white-100" v-for="(time, index) in times" :key="index">
+        <button v-for="(time, index) in times" :key="index" @click='hi(time)' class="py-4 px-1 rounded-md text-xl shadow-md text-center bg-white-100">
           {{ time }}
         </button>
+        <!-- https://tailwindcomponents.com/component/custom-radio-button -->
       </div>
     </div>
 </template>
@@ -29,7 +30,13 @@
 export default {
     data() {
       return {
-        times: ["10:00","12:00","14:00","16:00","18:00","20:00"]
+        times: ["10:00","12:00","14:00","16:00","18:00","20:00"],
+        select: ''
+      }
+    },
+    methods:{
+      hi(x){
+        this.select = x
       }
     }
 }
