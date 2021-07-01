@@ -55,7 +55,6 @@ export default {
     methods:{
       setTime(x){
         this.isSelected = x
-        console.log(this.isSelected)
       }
     }
 }
