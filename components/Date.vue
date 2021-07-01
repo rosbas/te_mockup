@@ -20,7 +20,7 @@
       <div class="grid grid-cols-4 gap-4">
         <div v-for="(time, index) in times" :key="index">
           <span v-if="time.ava">
-          <button class="py-5 px-2 rounded-md text-xl shadow-md text-center bg-white-100" @click='hi(time.t)'>
+          <button class="py-5 px-2 rounded-md text-xl shadow-md text-center bg-white-100" @click='setTime(time.t)' v-bind:class="{'bg-red-100':isSelected==time.t}">
             {{ time.t }}
           </button>
           </span>
@@ -49,12 +49,13 @@ export default {
           {t:"18:00",ava:true},
           {t:"20:00",ava:true},
         ],
-        select: ''
+        isSelected: ''
       }
     },
     methods:{
-      hi(x){
-        this.select = x
+      setTime(x){
+        this.isSelected = x
+        console.log(this.isSelected)
       }
     }
 }
