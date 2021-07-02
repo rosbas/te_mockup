@@ -52,9 +52,7 @@ export default {
           {t:"20:00",ava:true},
         ],
         isSelected: '',
-        power:"วันนี้",
         type:'text',
-        selectedDate:'',
       }
     },
     methods:{
@@ -63,8 +61,20 @@ export default {
       },
       getDateStr(){
          let s = new Date().toLocaleDateString();
+        //  "MM-dd-yyyy" => "yyyy-MM-dd"
+        
       return s
       },
-    }
+    },
+    computed:{
+        selectedDate:{
+          get () {
+            return this.$store.state.date
+          },
+          set(value){
+            this.$store.commit('updateDate',value)
+          }
+        }
+      }
 }
 </script>

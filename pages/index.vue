@@ -5,7 +5,7 @@
       <Name/>
       <Date/>
       <Seat/>
-      <div>{{name}}</div>
+      <button @click="onSubmited" class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
     </div>
   </div>
 </template>
@@ -13,14 +13,28 @@
 <script>
 
   export default {
-    data() {
-      return {
-      }
-    },
-    computed:{
-      name(){
-        return this.$store.state.name
-      }
+    // computed:{
+    //   name(){
+    //     return this.$store.state.name
+    //   },
+    //   date(){
+    //     return this.$store.state.date
+    //   },
+    //   seats(){
+    //     return this.$store.state.seats
+    //   },
+    // },
+    methods:{
+      onSubmited(){
+        //show confirmation modals
+        var data = {
+          name:this.$store.state.name,
+          date:this.$store.state.date,
+          seats:this.$store.state.seats
+          }
+        console.log(data)
+        return data
+      },
     }
   }
 </script>

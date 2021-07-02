@@ -49,7 +49,6 @@
         </div>
       </div>
       <p>{{explain_text}}</p>
-      <button class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
     </div>
 </template>
 
@@ -59,26 +58,22 @@ export default {
       return {
         seat_txt: "จำนวนที่นั่ง",
         explain_text: "การจองโต๊ะผ่านระบบจองของแอพพลิเคชั่นไลน์ คุณสามารถทำการจองจำนวนที่นั่งได้ 1-8 ที่ หากต้องการจองจำนวนที่นั่งมากกว่า 8 ที่ ท่านสามารถจองคิวได้ที่เคาน์เตอร์หน้าร้าน",
-        seats: 1
       }
     },
     methods: {
         addSeat(){
-            if(this.seats<8){
-                this.seats++
-            }
-            else{
-                alert("No more than 8 seats are allowed.")
-            }
+            this.$store.commit('addSeat')
         },
         removeSeat(){
-            if(this.seats>1){
-                this.seats--
-            }
-            else{
-                alert("There must be at least one reserved seat.")
-            }
+            this.$store.commit('removeSeat')
         }
     },
+    computed:{
+      seats:{
+        get(){
+          return this.$store.state.seats
+        },
+      }
+    }
 }
 </script>

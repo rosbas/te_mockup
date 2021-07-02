@@ -1,10 +1,34 @@
 export const state = () => ({
   name: '',
   date: '',
-  seat: 1
+  seats: 1
 })
 export const mutations = {
-  increment(state) {
-    state.counter++
+  updateName(state,payload){
+      console.log(state)
+      console.log(payload)
+      state.name = payload
+  },
+  updateDate(state,payload){
+      state.date = payload
+  },
+  addSeat(state){
+      if(state.seats < 8){
+        state.seats++
+      }
+  },
+  removeSeat(state){
+      if(state.seats > 1){
+          state.seats--
+        }
   }
 }
+//   actions:{},
+//   modules:{},
+
+// export const getters={
+//       getCurrentName: state => state.name
+//   }
+
+
+// }

@@ -16,6 +16,7 @@
           type="text"
           placeholder="ชื่อ"
           v-model="name"
+          
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
       </div>
     </div>
@@ -23,15 +24,20 @@
 
 <script>
 export default {
-  data(){
-    return{
-      name:''
-    }
-  },
   computed:{
-      name(){
+    name:{
+      get () {
         return this.$store.state.name
+      },
+      set(value){
+        this.$store.commit('updateName',value)
       }
     }
+  },
+  // methods: {
+  //   updateName(e){
+  //     this.$store.commit('updateName', e.target.value)
+  //   }
+  // },
 }
 </script>
