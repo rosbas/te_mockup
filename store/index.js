@@ -1,6 +1,7 @@
 export const state = () => ({
   name: '',
   date: '',
+  appointedtime: '',
   seats: 1
 })
 export const mutations = {
@@ -11,6 +12,9 @@ export const mutations = {
   },
   updateDate(state,payload){
       state.date = payload
+  },
+  updateappointedTime(state,payload){
+    state.appointedtime = payload
   },
   addSeat(state){
       if(state.seats < 8){

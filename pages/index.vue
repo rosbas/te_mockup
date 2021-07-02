@@ -30,6 +30,7 @@
         var data = {
           name:this.$store.state.name,
           date:this.$store.state.date,
+          appointedtime:this.$store.state.appointedtime,
           seats:this.$store.state.seats
           }
         console.log(data)
