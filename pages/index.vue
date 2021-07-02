@@ -5,11 +5,22 @@
       <Name/>
       <Date/>
       <Seat/>
+      <div>{{name}}</div>
     </div>
   </div>
 </template>
 
 <script>
 
-export default {}
+  export default {
+    data() {
+      return {
+      }
+    },
+    computed:{
+      name(){
+        return this.$store.state.name
+      }
+    }
+  }
 </script>

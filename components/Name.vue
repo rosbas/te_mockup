@@ -27,6 +27,11 @@ export default {
     return{
       name:''
     }
-  }
+  },
+  computed:{
+      name(){
+        return this.$store.state.name
+      }
+    }
 }
 </script>
