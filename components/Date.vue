@@ -58,6 +58,8 @@ export default {
     methods:{
       setTime(x){
         this.isSelected = x
+        //console.log(this.isSelected)
+        this.$store.commit('updateappointedTime',this.isSelected)
       },
       getDateStr(){
          let s = new Date().toLocaleDateString();
