@@ -15,7 +15,18 @@
           id="username"
           type="text"
           placeholder="ชื่อ"
+          v-model="name"
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
       </div>
     </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return{
+      name:''
+    }
+  }
+}
+</script>

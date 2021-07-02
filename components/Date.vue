@@ -53,7 +53,8 @@ export default {
         ],
         isSelected: '',
         power:"วันนี้",
-        type:'text'
+        type:'text',
+        selectedDate:'',
       }
     },
     methods:{
