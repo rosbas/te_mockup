@@ -7,6 +7,19 @@
         <h2 class="pl-6 text-2xl font-bold mb-4">{{seat_txt}}</h2>
       </div>
       <Table/>
+        <div class="grid grid-rows-6 grid-cols-11 gap-2">
+          <button class="row-start-1 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-1 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-3 col-start-1 row-span-2 col-span-5 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-6 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-6 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+
+          <button class="row-start-1 col-start-8 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-1 col-start-10 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-3 col-start-7 row-span-2 col-span-5 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-6 col-start-8 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button class="row-start-6 col-start-10 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+        </div>
       <div class="flex flex-row">
             <button class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100" @click="removeSeat()">-</button>
             <span class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100">
@@ -24,7 +37,7 @@ export default {
     data() {
       return {
         seat_txt: "จำนวนที่นั่ง",
-        explain_text: "การจองโต๊ะผ่านระบบจองของแอพพลิเคชั่นไลน์ คุณสามารถทำการจองจำนวนที่นั่งได้ 1-8 ที่ หากท่านที่ความต้องการจองจำนวนที่นั่งมากกว่า คุณสามารถจองคิวได้ที่เคาน์เตอร์หน้าร้าน",
+        explain_text: "การจองโต๊ะผ่านระบบจองของแอพพลิเคชั่นไลน์ คุณสามารถทำการจองจำนวนที่นั่งได้ 1-8 ที่ หากต้องการจองจำนวนที่นั่งมากกว่า 8 ที่ ท่านสามารถจองคิวได้ที่เคาน์เตอร์หน้าร้าน",
         seats: 1
       }
     },
