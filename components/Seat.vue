@@ -30,12 +30,12 @@
           <button v-if="seats >= 8" class = "row-start-6 col-start-10 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
           <button v-else class = "row-start-6 col-start-10 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
         </div>
-      <div class="flex flex-row">
+      <div class="flex flex-row m-4">
+        <div class="m-auto">
             <button class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100" @click="removeSeat()">-</button>
-            <span class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100">
-                {{seats}}
-            </span>
+            <span class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100">{{seats}}</span>
             <button class="py-4 px-4 rounded-md text-xl shadow-md text-center bg-white-100" @click="addSeat()">+</button>
+        </div>
       </div>
       <p>{{explain_text}}</p>
       <button class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
