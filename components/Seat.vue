@@ -6,8 +6,19 @@
         </svg>
         <h2 class="pl-6 text-2xl font-bold mb-4">{{seat_txt}}</h2>
       </div>
-      <Table/>
-        <div class="grid grid-rows-6 grid-cols-11 gap-2">
+        <div v-if="seats<5" class="mx-20 grid grid-rows-6 grid-cols-5 gap-2">
+          <button v-if="seats >= 1" class = "row-start-1 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
+          <button v-else class = "row-start-1 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button v-if="seats >= 2" class = "row-start-1 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
+          <button v-else class = "row-start-1 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button v-if="seats >= 1" class = "row-start-3 col-start-1 row-span-2 col-span-5 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
+          <button v-else class = "row-start-3 col-start-1 row-span-2 col-span-5 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button v-if="seats >= 3" class = "row-start-6 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
+          <button v-else class = "row-start-6 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+          <button v-if="seats >= 4" class = "row-start-6 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
+          <button v-else class = "row-start-6 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
+        </div>
+        <div v-else class="grid grid-rows-6 grid-cols-11 gap-2">
           <button v-if="seats >= 1" class = "row-start-1 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
           <button v-else class = "row-start-1 col-start-2 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-gray-300"></button>
           <button v-if="seats >= 2" class = "row-start-1 col-start-4 py-3 px-3 rounded-md text-sm shadow-inner-xl text-center bg-red-300"></button>
