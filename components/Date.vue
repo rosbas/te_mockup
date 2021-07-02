@@ -13,9 +13,11 @@
         <input 
           name="date"
           id="date"
-          type="date"
-          placeholder="วันนี้"
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
+          :type="type"
+          onfocus="(this.type='date')"
+          :placeholder="getDateStr()"
+          v-model="selectedDate"
+          class="dateclass shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
       </div>
       <div class="grid grid-cols-4 gap-4">
         <div v-for="(time, index) in times" :key="index">
@@ -49,13 +51,19 @@ export default {
           {t:"18:00",ava:true},
           {t:"20:00",ava:true},
         ],
-        isSelected: ''
+        isSelected: '',
+        power:"วันนี้",
+        type:'text'
       }
     },
     methods:{
       setTime(x){
         this.isSelected = x
-      }
+      },
+      getDateStr(){
+         let s = new Date().toLocaleDateString();
+      return s
+      },
     }
 }
 </script>
