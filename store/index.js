@@ -2,6 +2,7 @@ export const state = () => ({
   name: '',
   date: '',
   appointedtime: '',
+  confirmpopupdisplay: 'none',
   seats: 1
 })
 export const mutations = {
@@ -15,6 +16,9 @@ export const mutations = {
   },
   updateappointedTime(state,payload){
     state.appointedtime = payload
+  },
+  changeConfirmpopupDisplay(state, payload){
+    state.confirmpopupdisplay = payload
   },
   addSeat(state){
       if(state.seats < 8){
