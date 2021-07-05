@@ -7,10 +7,12 @@
       <Seat/>
       <button @click="onSubmited" class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
     </div>
+    <ConfirmPopup :popupData="popupData"></ConfirmPopup>
   </div>
 </template>
 
 <script>
+import ConfirmPopup from '../components/ConfirmPopup.vue'
 
   export default {
     // computed:{
@@ -24,18 +26,43 @@
     //     return this.$store.state.seats
     //   },
     // },
+    components:{
+      "ConfirmPopup" : ConfirmPopup
+    },
+    data() {
+      return {
+        popupData : {
+          "header" : "ยืนยันการจอง",
+          "body" : "โปรดยืนยันข้อมูลการจองของท่าน",
+          "footer" : "รายละเอียดการจอง:",
+          "pname" : this.$store.state.name,
+          "pdate" : this.$store.state.date,
+          "pappointedtime" : this.$store.state.appointedtime,
+          "pseats" : this.$store.state.seats,
+          "display" : "none"
+        }
+      }
+    },
     methods:{
       onSubmited(){
-        //show confirmation modals
         var data = {
           name:this.$store.state.name,
           date:this.$store.state.date,
           appointedtime:this.$store.state.appointedtime,
           seats:this.$store.state.seats
           }
+        
+        this.$set(this.popupData, 'pname', this.$store.state.name)
+        this.$set(this.popupData, 'pdate', this.$store.state.date)
+        this.$set(this.popupData, 'pappointedtime', this.$store.state.appointedtime)
+        this.$set(this.popupData, 'pseats', this.$store.state.seats)
         console.log(data)
-        return data
+        //show confirmation modals
+        this.popupData.display = "block";
       },
+      mounted(){
+        this.popupData.display = "block";
+      }
     }
   }
 </script>
