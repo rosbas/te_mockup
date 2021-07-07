@@ -158,7 +158,8 @@ export default {
 
     selectDate(newSelectedDate) {
       this.selectedDate = newSelectedDate;
-    }
+    },
+
   }
 };
 </script>
@@ -170,13 +171,13 @@ export default {
   border: solid 1px var(--grey-300);
 }
 
-.day-of-week {
+/* .day-of-week {
   color: var(--grey-800);
   font-size: 18px;
   background-color: #fff;
   padding-bottom: 5px;
   padding-top: 10px;
-}
+} */
 
 .day-of-week,
 .days-grid {

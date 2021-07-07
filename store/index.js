@@ -7,8 +7,8 @@ export const state = () => ({
 })
 export const mutations = {
   updateName(state,payload){
-      console.log(state)
-      console.log(payload)
+      // console.log(state)
+      // console.log(payload)
       state.name = payload
   },
   updateDate(state,payload){

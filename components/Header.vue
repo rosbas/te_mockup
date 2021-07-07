@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="bg-yellow-400">
-            <div class="flex flex-row">
-                <img class="m-1 md:object-scale-down" src="https://i.imgur.com/KXNEedj.png" alt="Logoicon" width="128" max-width="128" height="128" >
+        <div class="bg-yellow-400 pb-10 md:pb-0 transition-all">
+            <div class="flex flex-auto">
+                <img class="w-28 h-28 md:w-32 md:h-32" src="https://i.imgur.com/KXNEedj.png" alt="Logoicon">
                 <div class="px-4 py-2">
                     <h1 class="py-2">Saemaeul Sikdang</h1>
                     <h2 class="py-2">새마을 식당</h2>

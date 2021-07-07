@@ -6,6 +6,7 @@
         </svg>
         <h2 class="pl-6 text-2xl font-bold mb-4 items-center">เลือกเวลา</h2>
       </div>
+      <!-- Select Date -->
       <div class="relative h-10 input-component space-y-8 mb-14">
         <label for="date" class="absolute left-2 transition-all bg-white px-1">
           วัน
@@ -19,6 +20,7 @@
           v-model="selectedDate"
           class="dateclass shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
       </div>
+      <!-- Select Time -->
       <div class="grid grid-cols-4 gap-4">
         <div v-for="(time, index) in times" :key="index">
           <span v-if="time.ava">
