@@ -1,6 +1,6 @@
 <template>
-  <ol class="day-of-week">
-    <li
+  <ol class="day-of-week text-md text-gray-400 bg-white pb-1 pt-2 grid grid-cols-7">
+    <li class="text-right pr-1"
       v-for="weekday in weekdays"
       :key="weekday"
     >
@@ -22,8 +22,17 @@ export default {
   }
 }
 </script>
-
+<!--
 <style scoped>
+
+.day-of-week {
+  color: var(--grey-800);
+  font-size: 18px;
+  background-color: #fff;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
 .day-of-week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -34,3 +43,4 @@ export default {
   padding-right: 5px;
 }
 </style>
+-->
