@@ -42,10 +42,5 @@ li {
   list-style: none;
 }
 
-.calendar-month-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 10px;
-}
+
 </style>

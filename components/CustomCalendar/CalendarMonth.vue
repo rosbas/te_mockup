@@ -1,13 +1,13 @@
 <template>
   <!-- Main -->
-  <div class="calendar-month">
+  <div class="calendar-month relative bg-gray-200 border-1 border-gray-300">
     <!-- Closing Tabs + Title -->
     <div>เลือกวัน</div>
     <!-- Header -->
-    <div class="calendar-month-header">
+    <div class="flex justify-between bg-white p-2">
       <CalendarDateIndicator
         :selected-date="selectedDate"
-        class="calendar-month-header-selected-month"
+        class="flex justify-between bg-white p-2 selected-month"
       />
 
       <CalendarDateSelector
@@ -21,7 +21,7 @@
     <CalendarWeekdays/>
 
     <!-- Grid days -->
-    <ol class="days-grid">
+    <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
       <CalendarMonthDayItem
         v-for="day in days"
         :key="day.date"
@@ -165,30 +165,13 @@ export default {
 </script>
 
 <style scoped>
-.calendar-month {
-  position: relative;
-  background-color: var(--grey-200);
-  border: solid 1px var(--grey-300);
-}
 
-/* .day-of-week {
-  color: var(--grey-800);
-  font-size: 18px;
-  background-color: #fff;
-  padding-bottom: 5px;
-  padding-top: 10px;
-} */
-
-.day-of-week,
+/*
 .days-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
 
-.day-of-week > * {
-  text-align: right;
-  padding-right: 5px;
-}
 
 .days-grid {
   height: 100%;
@@ -197,4 +180,5 @@ export default {
   grid-row-gap: var(--grid-gap);
   border-top: solid 1px var(--grey-200);
 }
+*/
 </style>
