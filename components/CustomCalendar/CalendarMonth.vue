@@ -34,6 +34,7 @@
               :key="day.date"
               :day="day"
               :is-today="day.date === today"
+              class = "border border-black"
             />
           </ol>
         </div>
