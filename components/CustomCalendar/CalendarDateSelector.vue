@@ -1,8 +1,8 @@
 <template>
-  <div class="calendar-date-selector">
-    <span @click="selectPrevious">﹤</span>
-    <span @click="selectCurrent">Today</span>
-    <span @click="selectNext">﹥</span>
+  <div class="calendar-date-selector flex justify-between w-20 text-color-gray-800">
+    <span class="cursor-pointer select-none" @click="selectPrevious">﹤</span>
+    <span class="cursor-pointer select-none" @click="selectCurrent">Today</span>
+    <span class="cursor-pointer select-none" @click="selectNext">﹥</span>
   </div>
 </template>
 
@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style scoped>
+/*
 .calendar-date-selector {
   display: flex;
   justify-content: space-between;
@@ -55,4 +56,5 @@ export default {
   cursor: pointer;
   user-select: none;
 }
+*/
 </style>

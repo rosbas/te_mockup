@@ -1,13 +1,13 @@
 <template>
   <li
-    class="calendar-day"
+    class="calendar-day" 
     :class="{
       'calendar-day--not-current': !isCurrentMonth,
       'calendar-day--today': isToday
     }"
     @click="onClick"
   >
-    <span>{{ label }}</span>
+    <span class="flex justify-center items-center absolute right-1 w-5 h-5">{{ label }}</span>
   </li>
 </template>
 
@@ -48,6 +48,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .calendar-day {
   position: relative;
   min-height: 100px;
@@ -66,19 +68,21 @@ export default {
   width: var(--day-label-size);
   height: var(--day-label-size);
 }
-
+/* relative text-base bg-white p-1 min-h-8 */
 .calendar-day--not-current {
   background-color: var(--grey-100);
   color: var(--grey-300);
 }
-
+/* bg-gray-100 text-gray-600 */
 .calendar-day--today {
   padding-top: 4px;
 }
+/*pt-1*/
 
 .calendar-day--today > span {
   color: #fff;
   border-radius: 9999px;
   background-color: var(--grey-800);
 }
+
 </style>
