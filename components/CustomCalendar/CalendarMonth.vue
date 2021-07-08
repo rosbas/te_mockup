@@ -17,11 +17,11 @@
               class="flex justify-between bg-red-700 p-2 selected-month"
             />
 
-        <!-- <CalendarDateSelector
+        <CalendarDateSelector
           :current-date="today"
           :selected-date="selectedDate"
           @dateSelected="selectDate"
-        /> -->
+        />
       </div>
 
         <!-- Show weekdays (sun-sat) -->
@@ -33,6 +33,7 @@
               v-for="day in days"
               :key="day.date"
               :day="day"
+              :selected-date="selectedDate"
               :is-today="day.date === today"
             />
           </ol>
