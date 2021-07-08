@@ -3,8 +3,8 @@
     class="calendar-day" 
     :class="{
       'calendar-day--today': isToday,
-      'calendar-day-bfToday': afToday,
-      'hi': isDayOfOtherMonth 
+      'calendar-day-afToday': afToday,
+      'calendar-day-hidden': isNotCurrentMonth
     }"
     @click="onClick"
   >
@@ -60,8 +60,8 @@ export default {
     afToday(){
       return dayjs(this.day.date).isAfter(dayjs().format("YYYY-MM-DD"))
     },
-    isDayOfOtherMonth(){
-        return this.day.isCurrentMonth
+    isNotCurrentMonth(){
+        return !this.day.isCurrentMonth
     }
 
   },
@@ -121,4 +121,13 @@ export default {
   background-color: var(--grey-800);
 }
 
+.calendar-day-hidden{
+  padding-top: 4px;
+}
+.calendar-day-hidden > span{
+  font-size:0;
+  color: rgb(0, 0, 0);
+  border-radius: 9999px;
+  background-color: var(--grey-800);
+}
 </style>

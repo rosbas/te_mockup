@@ -30,8 +30,6 @@
 
         <!-- Show weekdays (sun-sat) -->
         <CalendarWeekdays/>
-        <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
-
           <!-- Grid days -->
           <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
             <CalendarMonthDayItem
