@@ -17,24 +17,23 @@
               class="flex justify-between bg-red-700 p-2 selected-month"
             />
 
-      <!-- <CalendarDateSelector
-        :current-date="today"
-        :selected-date="selectedDate"
-        @dateSelected="selectDate"
-      /> -->
-    </div>
+        <!-- <CalendarDateSelector
+          :current-date="today"
+          :selected-date="selectedDate"
+          @dateSelected="selectDate"
+        /> -->
+      </div>
 
-          <!-- Show weekdays (sun-sat) -->
-          <CalendarWeekdays/>
+        <!-- Show weekdays (sun-sat) -->
+        <CalendarWeekdays/>
 
           <!-- Grid days -->
-          <ol class="days-grid h-full relative border-t-2 border-red-300 grid grid-cols-7 ">
+          <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
             <CalendarMonthDayItem
               v-for="day in days"
               :key="day.date"
               :day="day"
               :is-today="day.date === today"
-              class = "border border-grey-900"
             />
           </ol>
         </div>

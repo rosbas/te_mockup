@@ -2,17 +2,31 @@
   <li
     class="calendar-day" 
     :class="{
-      'calendar-day--not-current': !isCurrentMonth,
-      'calendar-day--today': isToday
+      'calendar-day--today': isToday,
+      '.calendar-day-bfToday': afToday,
     }"
     @click="onClick"
   >
+  <!-- <li
+    class="relative p-5 min-h-0 h-24 bg-white" 
+    :class="{
+      '.calendar-day--today' : isToday,
+      'text-base': afToday,
+      'text-gray-500': noCase
+
+    }"
+    @click="onClick"
+  > -->
     <span class="flex justify-center items-center absolute right-1 w-5 h-5">{{ label }}</span>
   </li>
 </template>
 
 <script>
 import dayjs from "dayjs";
+var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
+var isToday = require('dayjs/plugin/isToday')
+dayjs.extend(isSameOrAfter)
+dayjs.extend(isToday)
 
 export default {
   name: "CalendarMonthDayItem",
@@ -37,7 +51,14 @@ export default {
   computed: {
     label() {
       return dayjs(this.day.date).format("D");
+    },
+    afToday(){
+      return dayjs(this.day.date).isSameOrAfter(dayjs().format("YYYY-MM-DD"))
+    },
+    noCase(){
+      return this.afToday && !isToday
     }
+
   },
   methods: {
     onClick(){
@@ -55,7 +76,6 @@ export default {
   min-height: 100px;
   font-size: 16px;
   background-color: #fff;
-  color: var(--grey-800);
   padding: 5px;
 }
 
@@ -66,6 +86,7 @@ export default {
   align-items: center;
   position: absolute;
   right: 2px;
+  color: var(--grey-800);
   width: var(--day-label-size);
   height: var(--day-label-size);
 }
@@ -82,6 +103,15 @@ export default {
 
 .calendar-day--today > span {
   color: rgb(220, 38, 38);
+  border-radius: 9999px;
+  background-color: var(--grey-800);
+}
+
+.calendar-day-bfToday{
+  font-size: 0;
+}
+.calendar-day-bfToday > span{
+  color: rgb(129, 120, 120);
   border-radius: 9999px;
   background-color: var(--grey-800);
 }
