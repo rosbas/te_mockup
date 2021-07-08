@@ -8,27 +8,31 @@
           <!-- Closing Tabs + Title -->
           <div class="flex bg-red-700">
             <button @click="closeCalendar" class="py-1 px-1 text-white">X</button>
-            <div class="pl-1 pr-3 w-full text-white text-center m-auto">เลือกวัน</div>
+            <div class="pl-1 pr-5 w-full text-white text-center m-auto">เลือกวัน</div>
           </div>
           <!-- Header -->
+          <div class="flex items-right bg-red-700 p-2 text-white border-t-2 border-red-400">
+            <span>วันที่คุณเลือก</span>
+          </div>
           <div class="flex items-center justify-center bg-red-700 p-2 text-white">
             <CalendarDateIndicator
               :selected-date="selectedDate"
-              class="flex justify-between bg-red-700 p-2 selected-month"
+              class="flex justify-between bg-red-700 selected-month"
             />
-
-        <CalendarDateSelector
-          :current-date="today"
-          :selected-date="selectedDate"
-          @dateSelected="selectDate"
-        />
-      </div>
+          </div>
+          <!-- <today>
+          <CalendarDateSelector
+              :current-date="today"
+              :selected-date="selectedDate"
+              @dateSelected="selectDate"
+            />
+          -->
 
         <!-- Show weekdays (sun-sat) -->
         <CalendarWeekdays/>
 
           <!-- Grid days -->
-          <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
+          <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
             <CalendarMonthDayItem
               v-for="day in days"
               :key="day.date"

@@ -3,8 +3,7 @@
     class="calendar-day" 
     :class="{
       'calendar-day--today': isToday,
-      '.calendar-day-bfToday': afToday,
-      'hi': isDayOfOtherMonth 
+      'calendar-day-afToday': afToday
     }"
     @click="onClick"
   >
@@ -18,7 +17,7 @@
     }"
     @click="onClick"
   > -->
-    <span class="flex justify-center items-center absolute right-1 w-5 h-5">{{ label }}</span>
+    <span class="flex justify-center items-center absolute right-1 w-5 h-4">{{ label }}</span>
   </li>
 </template>
 
@@ -58,10 +57,7 @@ export default {
       return dayjs(this.day.date).format("D");
     },
     afToday(){
-      return dayjs(this.day.date).isSameOrAfter(dayjs().format("YYYY-MM-DD"))
-    },
-    isDayOfOtherMonth(){
-      return this.day.isCurrentMonth
+      return dayjs(this.day.date).isAfter(dayjs().format("YYYY-MM-DD"))
     }
 
   },
@@ -91,7 +87,7 @@ export default {
   align-items: center;
   position: absolute;
   right: 2px;
-  color: var(--grey-800);
+  color: rgb(161, 161, 161);
   width: var(--day-label-size);
   height: var(--day-label-size);
 }
@@ -112,11 +108,11 @@ export default {
   background-color: var(--grey-800);
 }
 
-.calendar-day-bfToday{
-  font-size: 0;
+.calendar-day-afToday{
+  padding-top: 4px;
 }
-.calendar-day-bfToday > span{
-  color: rgb(129, 120, 120);
+.calendar-day-afToday > span{
+  color: rgb(0, 0, 0);
   border-radius: 9999px;
   background-color: var(--grey-800);
 }

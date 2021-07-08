@@ -1,8 +1,8 @@
 <template>
-  <div class="flex">
-    <div class="text-2xl font-semibold text-gray-100">{{ selectedDayOfWeek }}</div>
-    <div class="text-2xl font-semibold text-gray-100">{{ selectedDay }}</div>
-    <div class="text-2xl font-semibold text-gray-100">{{ selectedMonth }}</div>
+  <div class="inline-block">
+    <div class="pb-4 text-2md align-middle font-semibold text-center text-gray-100">{{ selectedDayOfWeek }}</div>
+    <div class="py-1 text-2xl align-middle font-semibold text-center text-gray-100">{{ selectedDay }}</div>
+    <div class="pt-4 text-2md align-middle font-semibold text-center text-gray-100">{{ selectedMonth }}</div>
   </div>
 </template>
 
