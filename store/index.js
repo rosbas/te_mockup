@@ -1,12 +1,17 @@
+import dayjs from "dayjs";
 export const state = () => ({
   name: '',
   date: '',
   appointedtime: '',
   calendardisplay: 'none',
   confirmpopupdisplay: 'none',
-  seats: 1
+  seats: 1,
+  selectedDateJS: dayjs()
 })
 export const mutations = {
+  setSelectedDate(state,payload){
+    state.selectedDateJS = payload
+  },
   updateName(state,payload){
       // console.log(state)
       // console.log(payload)

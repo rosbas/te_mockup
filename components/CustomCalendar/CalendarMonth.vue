@@ -36,7 +36,6 @@
               v-for="day in days"
               :key="day.date"
               :day="day"
-              :selected-date="selectedDate"
               :is-today="day.date === today"
             />
           </ol>
@@ -76,6 +75,11 @@ export default {
   },
 
   computed: {
+    selectedDateJS:{
+      get(){
+        return this.$store.state.selectedDateJS
+      }
+    },
     calendardisplay: {
       get () {
         return this.$store.state.calendardisplay

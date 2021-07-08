@@ -1,6 +1,6 @@
 <template>
   <li
-    class="calendar-day" 
+    class="calendar-day"
     :class="{
       'calendar-day--today': isToday,
       'calendar-day-afToday': afToday,
@@ -47,10 +47,6 @@ export default {
       type: Boolean,
       default: false
     },
-    selectedDate: {
-      type: Object,
-      required: true
-    }
   },
 
   computed: {
@@ -62,12 +58,17 @@ export default {
     },
     isNotCurrentMonth(){
         return !this.day.isCurrentMonth
-    }
+    },
+    selectedDateJS:{
+      get(){
+        return this.$store.state.selectedDateJS
+      },
+    },
 
   },
   methods: {
     onClick(){
-      console.log(this.day)
+      this.$store.commit('setSelectedDate',this.day)
     }
   },
 };
