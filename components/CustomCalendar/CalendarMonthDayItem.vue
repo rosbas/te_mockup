@@ -4,6 +4,7 @@
     :class="{
       'calendar-day--today': isToday,
       '.calendar-day-bfToday': afToday,
+      'hi': isDayOfOtherMonth 
     }"
     @click="onClick"
   >
@@ -45,6 +46,10 @@ export default {
     isToday: {
       type: Boolean,
       default: false
+    },
+    selectedDate: {
+      type: Object,
+      required: true
     }
   },
 
@@ -55,8 +60,8 @@ export default {
     afToday(){
       return dayjs(this.day.date).isSameOrAfter(dayjs().format("YYYY-MM-DD"))
     },
-    noCase(){
-      return this.afToday && !isToday
+    isDayOfOtherMonth(){
+      return dayjs(this.day.date).format("MMM") !== this.selectedDate.format("MMM");
     }
 
   },
