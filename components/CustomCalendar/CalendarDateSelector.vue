@@ -24,22 +24,22 @@ export default {
     }
   },
 
-  methods: {
-    selectPrevious() {
-      let newSelectedDate = dayjs(this.selectedDate).subtract(1, "month");
-      this.$emit("dateSelected", newSelectedDate);
-    },
+  // methods: {
+  //   selectPrevious() {
+  //     let newSelectedDate = dayjs(this.selectedDate).subtract(1, "month");
+  //     this.$emit("dateSelected", newSelectedDate);
+  //   },
 
-    selectCurrent() {
-      let newSelectedDate = dayjs(this.currentDate);
-      this.$emit("dateSelected", newSelectedDate);
-    },
+  //   selectCurrent() {
+  //     let newSelectedDate = dayjs(this.currentDate);
+  //     this.$emit("dateSelected", newSelectedDate);
+  //   },
 
-    selectNext() {
-      let newSelectedDate = dayjs(this.selectedDate).add(1, "month");
-      this.$emit("dateSelected", newSelectedDate);
-    }
-  }
+  //   selectNext() {
+  //     let newSelectedDate = dayjs(this.selectedDate).add(1, "month");
+  //     this.$emit("dateSelected", newSelectedDate);
+  //   }
+  // }
 };
 </script>
 

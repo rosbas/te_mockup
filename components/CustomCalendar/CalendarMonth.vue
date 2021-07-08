@@ -30,6 +30,7 @@
 
         <!-- Show weekdays (sun-sat) -->
         <CalendarWeekdays/>
+        <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
 
           <!-- Grid days -->
           <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
@@ -71,7 +72,8 @@ export default {
 
   data() {
     return {
-      selectedDate: dayjs()
+      selectedDate: dayjs(),
+      nextSelectedMonth: dayjs().add(1,'month')
     };
   },
 
@@ -184,8 +186,29 @@ export default {
       this.selectedDate = newSelectedDate;
     },
 
+    setNextMonth(nextMonth){
+      this.nextSelectedMonth = nextMonth
+    },
+
     closeCalendar(){
       this.$store.commit('changeCalendarDisplay',"none")
+    },
+
+    selectPrevious() {
+      let newSelectedDate = dayjs(this.selectedDate).subtract(1, "month");
+      this.selectDate(newSelectedDate)
+      this.setNextMonth(dayjs(this.nextSelectedMonth).subtract(1, "month"))
+    },
+
+    selectCurrent() {
+      let newSelectedDate = dayjs(this.currentDate);
+      this.selectDate(newSelectedDate)
+    },
+
+    selectNext() {
+      let newSelectedDate = dayjs(this.selectedDate).add(1, "month");
+      this.selectDate(newSelectedDate)
+      this.setNextMonth(dayjs(this.nextSelectedMonth).add(1, "month"))
     }
   }
 };

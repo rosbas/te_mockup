@@ -3,7 +3,8 @@
     class="calendar-day" 
     :class="{
       'calendar-day--today': isToday,
-      'calendar-day-afToday': afToday
+      'calendar-day-bfToday': afToday,
+      'hi': isDayOfOtherMonth 
     }"
     @click="onClick"
   >
@@ -58,6 +59,9 @@ export default {
     },
     afToday(){
       return dayjs(this.day.date).isAfter(dayjs().format("YYYY-MM-DD"))
+    },
+    isDayOfOtherMonth(){
+        return this.day.isCurrentMonth
     }
 
   },
