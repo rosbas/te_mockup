@@ -11,7 +11,7 @@
             <div class="pl-1 pr-3 w-full text-white text-center m-auto">เลือกวัน</div>
           </div>
           <!-- Header -->
-          <div class="flex justify-between bg-red-700 p-2 text-white">
+          <div class="flex items-center justify-center bg-red-700 p-2 text-white">
             <CalendarDateIndicator
               :selected-date="selectedDate"
               class="flex justify-between bg-red-700 p-2 selected-month"
