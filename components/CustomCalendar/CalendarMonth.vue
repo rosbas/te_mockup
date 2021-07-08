@@ -20,16 +20,19 @@
               class="flex justify-between bg-red-700 selected-month"
             />
           </div>
-          <!-- <today>
-          <CalendarDateSelector
+          
+          <!-- <CalendarDateSelector
               :current-date="today"
               :selected-date="selectedDate"
               @dateSelected="selectDate"
-            />
-          -->
+          /> -->
 
-        <!-- Show weekdays (sun-sat) -->
-        <CalendarWeekdays/>
+          <div class="flex px-auto justify-center text-color-gray-800 bg-red-700">
+            <span class="cursor-pointer select-none" @click="selectPrevious">﹤</span>
+            <span class="cursor-pointer select-none" @click="selectNext">﹥</span>
+          </div>
+          <!-- Show weekdays (sun-sat) -->
+          <CalendarWeekdays/>
           <!-- Grid days -->
           <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
             <CalendarMonthDayItem

@@ -2,9 +2,10 @@
   <li
     class="calendar-day"
     :class="{
+      'calendar-day-selected':isSelectedDay,
       'calendar-day--today': isToday,
       'calendar-day-afToday': afToday,
-      'calendar-day-hidden': isNotCurrentMonth
+      'calendar-day-hidden': isNotCurrentMonth,
     }"
     @click="onClick"
   >
@@ -57,14 +58,16 @@ export default {
       return dayjs(this.day.date).isAfter(dayjs().format("YYYY-MM-DD"))
     },
     isNotCurrentMonth(){
-        return !this.day.isCurrentMonth
+      return !this.day.isCurrentMonth
+    },
+    isSelectedDay(){
+      return this.selectedDateJS.format("YYYY-MM-DD") == this.day.date
     },
     selectedDateJS:{
       get(){
-        return this.$store.state.selectedDateJS
+        return dayjs(this.$store.state.selectedDateJS)
       },
     },
-
   },
   methods: {
     onClick(){
@@ -130,5 +133,17 @@ export default {
   color: rgb(0, 0, 0);
   border-radius: 9999px;
   background-color: var(--grey-800);
+}
+
+.calendar-day-selected{
+  padding-top: 4px;
+}
+
+.calendar-day-selected > span{
+  --tw-text-opacity: 1;
+  color: rgba(199, 210, 254, var(--tw-text-opacity));
+  padding: 2px;
+  border-radius: 0.5rem;
+  background-color: rgb(220, 38, 38);
 }
 </style>
