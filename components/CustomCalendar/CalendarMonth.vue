@@ -17,12 +17,12 @@
               class="flex justify-between bg-red-700 p-2 selected-month"
             />
 
-            <CalendarDateSelector
-              :current-date="today"
-              :selected-date="selectedDate"
-              @dateSelected="selectDate"
-            />
-          </div>
+      <!-- <CalendarDateSelector
+        :current-date="today"
+        :selected-date="selectedDate"
+        @dateSelected="selectDate"
+      /> -->
+    </div>
 
           <!-- Show weekdays (sun-sat) -->
           <CalendarWeekdays/>

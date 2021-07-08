@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 
-
+/* class="relative min-h-full text-sm bg-white p-5" */
 .calendar-day {
   position: relative;
   min-height: 100px;
@@ -59,6 +59,7 @@ export default {
   padding: 5px;
 }
 
+/* class="flex justify-center items-center absolute right-px" */
 .calendar-day > span {
   display: flex;
   justify-content: center;
