@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     onClick(){
-      this.$store.commit('setSelectedDate',this.day)
+      this.$store.commit('setSelectedDate',this.day.date)
     }
   },
 };

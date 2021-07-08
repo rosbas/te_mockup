@@ -1,4 +1,7 @@
 import dayjs from "dayjs";
+var customParseFormat = require('dayjs/plugin/customParseFormat')
+dayjs.extend(customParseFormat)
+
 export const state = () => ({
   name: '',
   date: '',
@@ -10,11 +13,9 @@ export const state = () => ({
 })
 export const mutations = {
   setSelectedDate(state,payload){
-    state.selectedDateJS = payload
+    state.selectedDateJS = dayjs(payload,'YYYY-MM-DD').format('YYYY-MM-DDTHH:mm:ss.sss[Z]') 
   },
   updateName(state,payload){
-      // console.log(state)
-      // console.log(payload)
       state.name = payload
   },
   updateDate(state,payload){

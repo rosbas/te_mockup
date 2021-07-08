@@ -7,24 +7,29 @@
 </template>
 
 <script>
+import dayjs from "dayjs";
 export default {
   props: {
     selectedDate: {
-      type: Object,
       required: true
     }
   },
 
   computed: {
+    selectedDateJS:{
+      get(){
+        return dayjs(this.$store.state.selectedDateJS)
+      }
+    },
     selectedDayOfWeek() {
       //translate into thai.
-      return this.selectedDate.format("dd");
+      return this.selectedDateJS.format("dd");
     },
       selectedDay(){
-        return this.selectedDate.format("D")
+        return this.selectedDateJS.format("D")
       },
     selectedMonth() {
-      return this.selectedDate.format("MMM");
+      return this.selectedDateJS.format("MMM");
     },
 
   }
