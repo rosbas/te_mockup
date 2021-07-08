@@ -61,7 +61,7 @@ export default {
       return dayjs(this.day.date).isSameOrAfter(dayjs().format("YYYY-MM-DD"))
     },
     isDayOfOtherMonth(){
-      return dayjs(this.day.date).format("MMM") !== this.selectedDate.format("MMM");
+      return this.day.isCurrentMonth
     }
 
   },
