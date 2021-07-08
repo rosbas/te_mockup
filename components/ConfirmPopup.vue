@@ -17,8 +17,8 @@
                         </div>
                     </div>
                     <div class = "flex">
-                        <button class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center" @click="closeFunction">ยืนยัน</button>
-                        <button class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-red-200 flex items-center" @click="closeFunction">ยกเลิก</button>
+                        <button @click="closeFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center">ยืนยัน</button>
+                        <button @click="closeFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-red-200 flex items-center">ยกเลิก</button>
                     </div>
                     
                 </div>

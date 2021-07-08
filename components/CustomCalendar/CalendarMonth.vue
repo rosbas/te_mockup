@@ -1,34 +1,44 @@
 <template>
   <!-- Main -->
-  <div class="calendar-month relative bg-gray-200 border-1 border-gray-300">
-    <!-- Closing Tabs + Title -->
-    <div>เลือกวัน</div>
-    <!-- Header -->
-    <div class="flex justify-between bg-white p-2">
-      <CalendarDateIndicator
-        :selected-date="selectedDate"
-        class="flex justify-between bg-white p-2 selected-month"
-      />
+  <div id="CalendarMonth" :style="{display : calendardisplay}">
+    <div class="fixed w-full h-full top-0 left-0 flex items-center justify-center">
+      <div class="overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+      <div class="container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <div class="calendar-month relative bg-gray-200 border-1 border-gray-300">
+          <!-- Closing Tabs + Title -->
+          <div class="flex">
+            <button @click="closeCalendar" class="py-1 px-1">X</button>
+            <div class="pl-1 pr-3 w-full text-center m-auto">เลือกวัน</div>
+          </div>
+          <!-- Header -->
+          <div class="flex justify-between bg-white p-2">
+            <CalendarDateIndicator
+              :selected-date="selectedDate"
+              class="flex justify-between bg-white p-2 selected-month"
+            />
 
-      <CalendarDateSelector
-        :current-date="today"
-        :selected-date="selectedDate"
-        @dateSelected="selectDate"
-      />
+            <CalendarDateSelector
+              :current-date="today"
+              :selected-date="selectedDate"
+              @dateSelected="selectDate"
+            />
+          </div>
+
+          <!-- Show weekdays (sun-sat) -->
+          <CalendarWeekdays/>
+
+          <!-- Grid days -->
+          <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
+            <CalendarMonthDayItem
+              v-for="day in days"
+              :key="day.date"
+              :day="day"
+              :is-today="day.date === today"
+            />
+          </ol>
+        </div>
+      </div>
     </div>
-
-    <!-- Show weekdays (sun-sat) -->
-    <CalendarWeekdays/>
-
-    <!-- Grid days -->
-    <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
-      <CalendarMonthDayItem
-        v-for="day in days"
-        :key="day.date"
-        :day="day"
-        :is-today="day.date === today"
-      />
-    </ol>
   </div>
 </template>
 
@@ -61,6 +71,15 @@ export default {
   },
 
   computed: {
+    calendardisplay: {
+      get () {
+        return this.$store.state.calendardisplay
+      },
+      set(value){
+        this.$store.commit('changeCalendarDisplay',value)
+      }
+    },
+
     days() {
       return [
         ...this.previousMonthDays,
@@ -160,6 +179,9 @@ export default {
       this.selectedDate = newSelectedDate;
     },
 
+    closeCalendar(){
+      this.$store.commit('changeCalendarDisplay',"none")
+    }
   }
 };
 </script>
