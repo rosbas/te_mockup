@@ -80,7 +80,7 @@ export default {
 /*pt-1*/
 
 .calendar-day--today > span {
-  color: #fff;
+  color: rgb(220, 38, 38);
   border-radius: 9999px;
   background-color: var(--grey-800);
 }

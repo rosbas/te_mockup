@@ -4,17 +4,17 @@
     <div class="fixed w-full h-full top-0 left-0 flex items-center justify-center">
       <div class="overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
       <div class="container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-        <div class="calendar-month relative bg-gray-200 border-1 border-gray-300">
+        <div class="calendar-month relative bg-white border-1 border-grey-300">
           <!-- Closing Tabs + Title -->
-          <div class="flex">
-            <button @click="closeCalendar" class="py-1 px-1">X</button>
-            <div class="pl-1 pr-3 w-full text-center m-auto">เลือกวัน</div>
+          <div class="flex bg-red-700">
+            <button @click="closeCalendar" class="py-1 px-1 text-white">X</button>
+            <div class="pl-1 pr-3 w-full text-white text-center m-auto">เลือกวัน</div>
           </div>
           <!-- Header -->
-          <div class="flex justify-between bg-white p-2">
+          <div class="flex justify-between bg-red-700 p-2 text-white">
             <CalendarDateIndicator
               :selected-date="selectedDate"
-              class="flex justify-between bg-white p-2 selected-month"
+              class="flex justify-between bg-red-700 p-2 selected-month"
             />
 
             <CalendarDateSelector
@@ -28,13 +28,13 @@
           <CalendarWeekdays/>
 
           <!-- Grid days -->
-          <ol class="days-grid h-full relative border-t-2 border-yellow-300 grid grid-cols-7 ">
+          <ol class="days-grid h-full relative border-t-2 border-red-300 grid grid-cols-7 ">
             <CalendarMonthDayItem
               v-for="day in days"
               :key="day.date"
               :day="day"
               :is-today="day.date === today"
-              class = "border border-black"
+              class = "border border-grey-900"
             />
           </ol>
         </div>

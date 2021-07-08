@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-date-indicator text-2xl font-semibold text-gray-800">{{ selectedMonth }}</div>
+  <div class="calendar-date-indicator text-2xl text-gray-100 font-semibold">{{ selectedMonth }}</div>
 </template>
 
 <script>
