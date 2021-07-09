@@ -33,11 +33,6 @@ export default {
         this.$store.commit('updateName',value)
       }
     }
-  },
-  // methods: {
-  //   updateName(e){
-  //     this.$store.commit('updateName', e.target.value)
-  //   }
-  // },
+  }
 }
 </script>

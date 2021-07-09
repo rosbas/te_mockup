@@ -13,12 +13,11 @@
                             <div>วันที่จอง: {{date}}</div>
                             <div>เวลาที่จอง: {{appointedtime}}</div>
                             <div>จำนวนที่นั่ง: {{seats}}</div>
-
                         </div>
                     </div>
                     <div class = "flex">
-                        <button class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center" @click="closeFunction">ยืนยัน</button>
-                        <button class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-red-200 flex items-center" @click="closeFunction">ยกเลิก</button>
+                        <button @click="confirmFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center">ยืนยัน</button>
+                        <button @click="closeFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-red-200 flex items-center">ยกเลิก</button>
                     </div>
                     
                 </div>
@@ -28,7 +27,6 @@
 </template>
 <script>
 export default {
-    props : ["popupData"],
     computed:{
     name:{
       get () {
@@ -43,6 +41,11 @@ export default {
     appointedtime:{
       get () {
         return this.$store.state.appointedtime
+      }
+    },
+    queuenumber:{
+      get () {
+        return this.$store.state.queuenumber
       }
     },
     confirmpopupdisplay:{
@@ -61,9 +64,22 @@ export default {
     },
     methods : {
         closeFunction(){
-            //this.popupData.display = "none";
-            this.$store.commit('changeConfirmpopupDisplay',"none")
-            
+          this.$store.commit('changeConfirmpopupDisplay',"none")
+        },
+        confirmFunction(){
+          //Send data to Database(Backend)
+
+          //Get queuenumber from Backend here
+          this.$store.commit('updateQueueNumber',"PSS_71RONI")
+
+          //Get QRcode url from Backend Here
+          this.$store.commit('changeQRcodeUrl','https://i.stack.imgur.com/UaClB.png')
+
+          //Close Popup
+          this.$store.commit('changeConfirmpopupDisplay',"none")
+
+          //Link to next page
+          this.$router.push('/reservesuccess');
         }
     }
 }

@@ -7,35 +7,21 @@
       <Seat/>
       <button @click="onSubmited" class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
     </div>
+    <CalendarMonth></CalendarMonth>
     <ConfirmPopup></ConfirmPopup>
   </div>
 </template>
 
 <script>
 import ConfirmPopup from '../components/ConfirmPopup.vue'
+import CalendarMonth from '../components/CustomCalendar/CalendarMonth.vue'
 
   export default {
-    // computed:{
-    //   name(){
-    //     return this.$store.state.name
-    //   },
-    //   date(){
-    //     return this.$store.state.date
-    //   },
-    //   seats(){
-    //     return this.$store.state.seats
-    //   },
-    // },
+    
     components:{
-      ConfirmPopup
+      ConfirmPopup,
+      CalendarMonth
     },
-    //data() {
-      //return {
-        //popupData : {
-          //"display" : "none"
-        //}
-      //}
-    //},
     methods:{
       onSubmited(){
         var data = {
@@ -44,14 +30,12 @@ import ConfirmPopup from '../components/ConfirmPopup.vue'
           appointedtime:this.$store.state.appointedtime,
           seats:this.$store.state.seats
         }
+
         console.log(data)
+
         //show confirmation modals
-        //this.popupData.display = "block";
         this.$store.commit('changeConfirmpopupDisplay',"block")
-      },
-      //mounted(){
-        //this.popupData.display = "block";
-      //}
+      }
     }
   }
 </script>
