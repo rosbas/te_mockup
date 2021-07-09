@@ -4,7 +4,7 @@ dayjs.extend(customParseFormat)
 
 export const state = () => ({
   name: '',
-  date: '',
+  date: dayjs().format('YYYY-MM-DD'),
   appointedtime: '',
   calendardisplay: 'none',
   confirmpopupdisplay: 'none',
