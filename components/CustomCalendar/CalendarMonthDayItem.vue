@@ -9,16 +9,6 @@
     }"
     @click="onClick"
   >
-  <!-- <li
-    class="relative p-5 min-h-0 h-24 bg-white" 
-    :class="{
-      '.calendar-day--today' : isToday,
-      'text-base': afToday,
-      'text-gray-500': noCase
-
-    }"
-    @click="onClick"
-  > -->
     <span class="flex justify-center items-center right-1 absolute w-5 h-4">{{ label }}</span>
   </li>
 </template>
@@ -98,16 +88,16 @@ export default {
   width: var(--day-label-size);
   height: var(--day-label-size);
 }
-/* relative text-base bg-white p-1 min-h-8 */
+
+/* bg-gray-100 text-gray-600 */
 .calendar-day--not-current {
   background-color: var(--grey-100);
   color: var(--grey-300);
 }
-/* bg-gray-100 text-gray-600 */
+
 .calendar-day--today {
   padding-top: 1rem;
 }
-/*pt-1*/
 
 .calendar-day--today > span {
   color: rgb(220, 38, 38);
@@ -115,6 +105,7 @@ export default {
   background-color: var(--grey-800);
 }
 
+/*pt-1*/
 .calendar-day-afToday{
   padding-top: 1rem;
 }

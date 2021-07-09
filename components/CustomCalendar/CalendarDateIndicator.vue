@@ -22,10 +22,9 @@ export default {
       }
     },
     selectedDayOfWeek() {
-      //translate into thai.
       return this.selectedDateJS.format("dd");
     },
-      selectedDay(){
+      selectedDay() {
         return this.selectedDateJS.format("D")
       },
     selectedMonth() {

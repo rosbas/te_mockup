@@ -4,15 +4,10 @@
     <div class='max-w-sm -mt-6 mb-10 w-full h-auto justify-center bg-white shadow-xl rounded-lg overflow-hidden mx-auto flex flex-col p-5 space-y-5'>
       <Name/>
       <Date/>
-      <!-- <div @click="toggleDateModal = !toggleDateModal" v-if="toggleDateModal" class="absolute z-40 inset-0 opacity-25 bg-black"></div> -->
       <Seat/>
       <button @click="onSubmited" class="py-6 px-20 mx-auto max-w-md rounded-xl shadow-md bg-red-400 flex items-center">จองคิว</button>
     </div>
     <CalendarMonth></CalendarMonth>
-    <!-- <div v-if="toggleDateModal" class="fixed overflow-x-hidden overflow-y-auto inset-0">
-      <button @click="toggleDateModal = !toggleDateModal">Hi</button>
-      <CalendarMonth></CalendarMonth>
-    </div> -->
     <ConfirmPopup></ConfirmPopup>
   </div>
 </template>
@@ -26,11 +21,6 @@ import CalendarMonth from '../components/CustomCalendar/CalendarMonth.vue'
     components:{
       ConfirmPopup,
       CalendarMonth
-    },
-    data() {
-      return {
-        toggleDateModal: false
-      }
     },
     methods:{
       onSubmited(){

@@ -21,12 +21,6 @@
             />
           </div>
           
-          <!-- <CalendarDateSelector
-              :current-date="today"
-              :selected-date="selectedDate"
-              @dateSelected="selectDate"
-          /> -->
-
           <!-- Show weekdays (sun-sat) -->
           <CalendarWeekdays/>
 
@@ -62,7 +56,6 @@ import weekday from "dayjs/plugin/weekday";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import CalendarMonthDayItem from "./CalendarMonthDayItem";
 import CalendarDateIndicator from "./CalendarDateIndicator";
-import CalendarDateSelector from "./CalendarDateSelector";
 import CalendarWeekdays from "./CalendarWeekdays";
 
 dayjs.extend(weekday);
@@ -74,7 +67,6 @@ export default {
   components: {
     CalendarMonthDayItem,
     CalendarDateIndicator,
-    CalendarDateSelector,
     CalendarWeekdays
   },
 
@@ -236,22 +228,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-/*
-.days-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-
-.days-grid {
-  height: 100%;
-  position: relative;
-  grid-column-gap: var(--grid-gap);
-  grid-row-gap: var(--grid-gap);
-  border-top: solid 1px var(--grey-200);
-}
-*/
-</style>

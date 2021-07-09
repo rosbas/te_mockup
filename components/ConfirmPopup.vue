@@ -13,7 +13,6 @@
                             <div>วันที่จอง: {{date}}</div>
                             <div>เวลาที่จอง: {{appointedtime}}</div>
                             <div>จำนวนที่นั่ง: {{seats}}</div>
-
                         </div>
                     </div>
                     <div class = "flex">
@@ -65,9 +64,7 @@ export default {
     },
     methods : {
         closeFunction(){
-            //this.popupData.display = "none";
-            this.$store.commit('changeConfirmpopupDisplay',"none")
-            
+          this.$store.commit('changeConfirmpopupDisplay',"none")
         },
         confirmFunction(){
           //Send data to Database(Backend)
