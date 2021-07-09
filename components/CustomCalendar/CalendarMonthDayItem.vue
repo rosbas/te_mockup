@@ -82,10 +82,10 @@ export default {
 /* class="relative min-h-full text-sm bg-white p-5" */
 .calendar-day {
   position: relative;
-  min-height: 100px;
-  font-size: 16px;
+  min-height: 4rem;
+  font-size: 1rem;
   background-color: #fff;
-  padding: 5px;
+  padding: 1rem;
 }
 
 /* class="flex justify-center items-center absolute right-px" */
@@ -106,7 +106,7 @@ export default {
 }
 /* bg-gray-100 text-gray-600 */
 .calendar-day--today {
-  padding-top: 4px;
+  padding-top: 2px;
 }
 /*pt-1*/
 
@@ -117,7 +117,7 @@ export default {
 }
 
 .calendar-day-afToday{
-  padding-top: 4px;
+  padding-top: 2px;
 }
 .calendar-day-afToday > span{
   color: rgb(0, 0, 0);
@@ -126,7 +126,7 @@ export default {
 }
 
 .calendar-day-hidden{
-  padding-top: 4px;
+  padding-top: 2px;
 }
 .calendar-day-hidden > span{
   font-size:0;
@@ -136,7 +136,7 @@ export default {
 }
 
 .calendar-day-selected{
-  padding-top: 4px;
+  padding-top: 2px;
 }
 
 .calendar-day-selected > span{

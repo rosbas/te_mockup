@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class = "flex">
-                        <button @click="closeFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center">ยืนยัน</button>
+                        <button @click="confirmFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-green-200 flex items-center">ยืนยัน</button>
                         <button @click="closeFunction" class="py-4 px-2 mx-auto max-w-md rounded-xl shadow-md bg-red-200 flex items-center">ยกเลิก</button>
                     </div>
                     
@@ -28,7 +28,6 @@
 </template>
 <script>
 export default {
-    props : ["popupData"],
     computed:{
     name:{
       get () {
@@ -43,6 +42,11 @@ export default {
     appointedtime:{
       get () {
         return this.$store.state.appointedtime
+      }
+    },
+    queuenumber:{
+      get () {
+        return this.$store.state.queuenumber
       }
     },
     confirmpopupdisplay:{
@@ -64,6 +68,21 @@ export default {
             //this.popupData.display = "none";
             this.$store.commit('changeConfirmpopupDisplay',"none")
             
+        },
+        confirmFunction(){
+          //Send data to Database(Backend)
+
+          //Get queuenumber from Backend here
+          this.$store.commit('updateQueueNumber',"PSS_71RONI")
+
+          //Get QRcode url from Backend Here
+          this.$store.commit('changeQRcodeUrl','https://lh3.googleusercontent.com/proxy/TupRhmH81PZFXnhLHd8JfeKTpk2_I5Im-XAgYy-lmozczbK1ms4Km548ExtI_pfscFntWUJin1A4gTHIxYkwxaal8E83cZb1YgplrQ9qVhkir3Av019cuSP2')
+
+          //Close Popup
+          this.$store.commit('changeConfirmpopupDisplay',"none")
+
+          //Link to next page
+          this.$router.push('/reservesuccess');
         }
     }
 }

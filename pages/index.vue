@@ -23,17 +23,7 @@ import ConfirmPopup from '../components/ConfirmPopup.vue'
 import CalendarMonth from '../components/CustomCalendar/CalendarMonth.vue'
 
   export default {
-    // computed:{
-    //   name(){
-    //     return this.$store.state.name
-    //   },
-    //   date(){
-    //     return this.$store.state.date
-    //   },
-    //   seats(){
-    //     return this.$store.state.seats
-    //   },
-    // },
+    
     components:{
       ConfirmPopup,
       CalendarMonth
@@ -51,14 +41,13 @@ import CalendarMonth from '../components/CustomCalendar/CalendarMonth.vue'
           appointedtime:this.$store.state.appointedtime,
           seats:this.$store.state.seats
         }
+
         console.log(data)
+
         //show confirmation modals
-        //this.popupData.display = "block";
         this.$store.commit('changeConfirmpopupDisplay',"block")
       },
-      //mounted(){
-        //this.popupData.display = "block";
-      //}
+      
       onClickingselectDate(){
         console.log("onClickingselectDate Clicked")
         this.$store.commit('changeCalendarDisplay',"block")

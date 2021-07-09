@@ -9,6 +9,8 @@ export const state = () => ({
   calendardisplay: 'none',
   confirmpopupdisplay: 'none',
   seats: 1,
+  queuenumber: 'PSB_70RONI',
+  qrcodeurl: 'http://www.tshirtsbye2.com/qrcode/images/dummy-qr.png',
   selectedDateJS: dayjs()
 })
 export const mutations = {
@@ -20,6 +22,12 @@ export const mutations = {
   },
   updateDate(state,payload){
       state.date = payload
+  },
+  updateQueueNumber(state,payload){
+    state.queuenumber = payload
+  },
+  changeQRcodeUrl(state,payload){
+    state.qrcodeurl = payload
   },
   updateappointedTime(state,payload){
     state.appointedtime = payload

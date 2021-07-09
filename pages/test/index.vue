@@ -13,7 +13,7 @@ import CalendarMonth from '../../components/CustomCalendar/CalendarMonth.vue'
     },
   }
 </script>
-
+<!--
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -44,3 +44,4 @@ li {
 
 
 </style>
+-->
