@@ -73,7 +73,7 @@ export default {
           this.$store.commit('updateQueueNumber',"PSS_71RONI")
 
           //Get QRcode url from Backend Here
-          this.$store.commit('changeQRcodeUrl','https://lh3.googleusercontent.com/proxy/TupRhmH81PZFXnhLHd8JfeKTpk2_I5Im-XAgYy-lmozczbK1ms4Km548ExtI_pfscFntWUJin1A4gTHIxYkwxaal8E83cZb1YgplrQ9qVhkir3Av019cuSP2')
+          this.$store.commit('changeQRcodeUrl','https://i.stack.imgur.com/UaClB.png')
 
           //Close Popup
           this.$store.commit('changeConfirmpopupDisplay',"none")
