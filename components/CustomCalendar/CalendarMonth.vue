@@ -27,12 +27,17 @@
               @dateSelected="selectDate"
           /> -->
 
-          <div class="flex px-auto justify-center text-color-gray-800 bg-red-700">
-            <span class="cursor-pointer select-none" @click="selectPrevious">﹤</span>
-            <span class="cursor-pointer select-none" @click="selectNext">﹥</span>
-          </div>
           <!-- Show weekdays (sun-sat) -->
           <CalendarWeekdays/>
+
+          <!-- Show Month forward/backward button and current month+year -->
+          <div class="flex px-auto py-2 justify-center text-color-gray-800 bg-white">
+            <span class="cursor-pointer select-none" @click="selectPrevious">﹤</span>
+            <span class="text-xl pl-3 pr-1">{{currentMonth}}</span>
+            <span class="text-xl pl-1 pr-3">{{year}}</span>
+            <span class="cursor-pointer select-none" @click="selectNext">﹥</span>
+          </div>
+
           <!-- Grid days -->
           <ol class="days-grid h-full relative border-t-2 border-red-500 grid grid-cols-7 ">
             <CalendarMonthDayItem
@@ -42,6 +47,9 @@
               :is-today="day.date === today"
             />
           </ol>
+          <div class="relative w-full px-auto py-5 text-center">
+            <button @click="confirmDateandcloseCalendar()" class="px-6 py-4 m-auto bg-red-700 rounded-xl text-white shadow-lg hover:bg-red-400" >ยืนยัน</button>
+          </div>
         </div>
       </div>
     </div>
@@ -107,7 +115,11 @@ export default {
     month() {
       return Number(this.selectedDate.format("M"));
     },
-
+    currentMonth() {
+      //same as month but in text
+      //month() is used in other functions, so don't change month()
+      return String(this.selectedDate.format("MMMM"));
+    },
     year() {
       return Number(this.selectedDate.format("YYYY"));
     },
@@ -196,6 +208,12 @@ export default {
     },
 
     closeCalendar(){
+      this.$store.commit('changeCalendarDisplay',"none")
+    },
+
+    confirmDateandcloseCalendar(){
+      console.log(this.$store.state.selectedDateJS)
+      this.$store.commit('updateDate',dayjs(this.$store.state.selectedDateJS).format("YYYY-MM-DD"))
       this.$store.commit('changeCalendarDisplay',"none")
     },
 

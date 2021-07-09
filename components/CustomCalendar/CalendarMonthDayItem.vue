@@ -19,7 +19,7 @@
     }"
     @click="onClick"
   > -->
-    <span class="flex justify-center items-center absolute right-1 w-5 h-4">{{ label }}</span>
+    <span class="flex justify-center items-center right-1 absolute w-5 h-4">{{ label }}</span>
   </li>
 </template>
 
@@ -94,7 +94,6 @@ export default {
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 2px;
   color: rgb(161, 161, 161);
   width: var(--day-label-size);
   height: var(--day-label-size);
@@ -106,7 +105,7 @@ export default {
 }
 /* bg-gray-100 text-gray-600 */
 .calendar-day--today {
-  padding-top: 2px;
+  padding-top: 1rem;
 }
 /*pt-1*/
 
@@ -117,7 +116,7 @@ export default {
 }
 
 .calendar-day-afToday{
-  padding-top: 2px;
+  padding-top: 1rem;
 }
 .calendar-day-afToday > span{
   color: rgb(0, 0, 0);
@@ -126,7 +125,7 @@ export default {
 }
 
 .calendar-day-hidden{
-  padding-top: 2px;
+  padding-top: 1rem;
 }
 .calendar-day-hidden > span{
   font-size:0;
@@ -136,13 +135,12 @@ export default {
 }
 
 .calendar-day-selected{
-  padding-top: 2px;
+  padding-top: 1rem;
 }
 
 .calendar-day-selected > span{
   --tw-text-opacity: 1;
   color: rgba(199, 210, 254, var(--tw-text-opacity));
-  padding: 2px;
   border-radius: 0.5rem;
   background-color: rgb(220, 38, 38);
 }

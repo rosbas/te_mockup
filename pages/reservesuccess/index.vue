@@ -38,8 +38,10 @@
 <script>
 export default {
   computed:{
-    data:{
-      qr_src: 'qrcodeurl'
+    data() {
+      return{
+        qr_src: 'qrcodeurl'
+      }
     },
     name:{
       get () {

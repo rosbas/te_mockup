@@ -12,10 +12,10 @@
           วัน
         </label>
         <input 
+          @click = onClickingselectDate()
           name="date"
           id="date"
           :type="type"
-          onfocus="(this.type='date')"
           :placeholder="getDateStr()"
           v-model="selectedDate"
           class="dateclass shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-blue-300 focus:ring-2">
@@ -69,6 +69,10 @@ export default {
         
       return s
       },
+      onClickingselectDate(){
+        console.log("onClickingselectDate Clicked")
+        this.$store.commit('changeCalendarDisplay',"block")
+      }
     },
     computed:{
         selectedDate:{
